@@ -9,4 +9,9 @@ class Home extends Controller
     public function breve(){
         return view('breve');
     }
+
+    public function home(){
+        return view('home');
+    }
 }
+
