@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Galery;
 use App\Models\Photo;
+use App\Models\Material;
+use App\Models\MaterialPanels;
 class ApiController extends Controller
 {
     public function CadastroGaleria(Request $request){
@@ -57,5 +59,69 @@ class ApiController extends Controller
         }
        
         return redirect()->to('https://unyflex.com.br/painel/galerias');
+    }
+
+    public function CadastroMaterial (Request $request){
+        if ($request->hasFile('file')) {  
+            
+            foreach ($request->file('file') as $file) {
+                
+                
+
+                $material = new Material(); 
+                $originalName = $file->getClientOriginalName(); 
+                $extensao = $file->extension();          
+                $novonome = $originalName; // Use o nome original do arquivo
+    
+                $confere = Material::where('file_name', $novonome)->first();
+                if (isset($confere)) {
+                    return redirect()->back()->withErrors(['confere_error' => 'Já existe um arquivo com esse nome.']);
+                }
+               
+                // Salvar informações no banco de dados
+                $material->name = $request->nome;
+                $material->file_name = $novonome;
+                $material->type = $request->tipo;
+                $material->status = $request->status;
+                $material->id_antiga = 9417;
+                $id_cursos = $request->id_cursos;
+                $id_presencial = $request->id_presencial;
+                $painelnovo = 'painelnovo';
+                $hoje = date('Y-m-d');
+                $usuario = 'NOVA API';
+    
+              
+                $material->save();
+                 
+  
+                    $materialPanel = new MaterialPanels();
+                    $materialPanel->material_id = $material->id;
+                    $materialPanel->course_id = $request->id_presencial;
+                    $materialPanel->save();
+    
+                   
+    
+                    $destinationPath = public_path('/storage/materials');
+                    $file->move($destinationPath, $novonome);
+           
+            } 
+            return redirect()->to('https://unyflex.com.br/painel/materiais/'.$material->id);
+        } else {
+            $novonome = $request->link;
+            $material->name = $request->nome;
+            $material->file_name = $novonome;
+            $material->type = $request->tipo;
+            $material->status = $request->status;
+            
+            if ($material->save()) {
+                $materialPanel = new MaterialPanels();
+                $materialPanel->material_id = $material->id;
+                $materialPanel->course_id = $request->id_presencial;
+                $materialPanel->save();
+                return redirect()->to('https://unyflex.com.br/painel/materiais/'.$material->id);
+            } else {
+              
+            }
+        }
     }
 }
