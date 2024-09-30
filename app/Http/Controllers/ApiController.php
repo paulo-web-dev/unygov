@@ -75,7 +75,7 @@ class ApiController extends Controller
     
                 $confere = Material::where('file_name', $novonome)->first();
                 if (isset($confere)) {
-                    return redirect()->back()->withErrors(['confere_error' => 'Já existe um arquivo com esse nome.']);
+                   dd('erro');
                 }
                
                 // Salvar informações no banco de dados
