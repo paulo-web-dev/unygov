@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home;
+use App\Http\Controllers\ApiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,3 +16,7 @@ use App\Http\Controllers\Home;
 
 Route::get('/', [Home::class, 'breve'])->name('breve');
 Route::get('/home', [Home::class, 'home'])->name('home');
+Route::post('/email/mensagem', [Home::class, 'emailMensagem'])->name('emailMensagem');
+
+//Apis
+Route::post('/api/cadastro/galeria', [ApiController::class, 'CadastroGaleria'])->name('cadastro-galeria');
