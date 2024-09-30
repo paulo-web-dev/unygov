@@ -105,7 +105,7 @@ class ApiController extends Controller
                     $file->move($destinationPath, $novonome);
            
             } 
-            return redirect()->to('https://unyflex.com.br/painel/materiais/'.$material->id);
+            return redirect()->to('https://unyflex.com.br/painel/materiais');
         } else {
             $novonome = $request->link;
             $material->name = $request->nome;
