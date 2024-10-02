@@ -65,7 +65,7 @@ class ApiController extends Controller
       
       
          
-            foreach ($request->file('file') as $file) {
+        
                 
                 
 
@@ -103,7 +103,7 @@ class ApiController extends Controller
                     $destinationPath = public_path('/storage/materials');
                     $file->move($destinationPath, $novonome);
            
-            } 
+         
             return redirect()->to('https://unyflex.com.br/painel/materiais');
      
     }
