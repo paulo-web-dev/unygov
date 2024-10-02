@@ -67,11 +67,11 @@ class ApiController extends Controller
          
       
                 
-                dd($request->file('file'));
+                // dd($request->file('file'));
                 $file = $request->file('file');
                 $material = new Material(); 
                 $originalName = $file->getClientOriginalName(); 
-                $extensao = $file->extension();          
+                        
                 $novonome = $originalName; // Use o nome original do arquivo
     
                 $confere = Material::where('file_name', $novonome)->first();
