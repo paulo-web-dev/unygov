@@ -62,7 +62,7 @@ class ApiController extends Controller
     }
 
     public function CadastroMaterial (Request $request){
-      
+        dd($request->file('file'));
         if ($request->hasFile('file')) {  
         
             foreach ($request->file('file') as $file) {
