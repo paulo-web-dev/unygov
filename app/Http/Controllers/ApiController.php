@@ -67,7 +67,7 @@ class ApiController extends Controller
          
       
                 
-                
+                dd($request->file('file'));
                 $file = $request->file('file');
                 $material = new Material(); 
                 $originalName = $file->getClientOriginalName(); 
