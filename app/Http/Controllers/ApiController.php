@@ -65,10 +65,10 @@ class ApiController extends Controller
       
       
          
-        
+      
                 
                 
-
+                $file = $request->file('file');
                 $material = new Material(); 
                 $originalName = $file->getClientOriginalName(); 
                 $extensao = $file->extension();          
@@ -103,7 +103,7 @@ class ApiController extends Controller
                     $destinationPath = public_path('/storage/materials');
                     $file->move($destinationPath, $novonome);
            
-         
+       
             return redirect()->to('https://unyflex.com.br/painel/materiais');
      
     }
