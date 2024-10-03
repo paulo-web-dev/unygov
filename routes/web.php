@@ -14,8 +14,9 @@ use App\Http\Controllers\ApiController;
 |
 */
 
-Route::get('/', [Home::class, 'breve'])->name('breve');
-Route::get('/home', [Home::class, 'home'])->name('home');
+Route::get('/breve', [Home::class, 'breve'])->name('breve');
+Route::get('/', [Home::class, 'home'])->name('home');
+Route::get('/embaixador', [Home::class, 'embaixador'])->name('embaixador');
 Route::post('/email/mensagem', [Home::class, 'emailMensagem'])->name('emailMensagem');
 
 //Apis

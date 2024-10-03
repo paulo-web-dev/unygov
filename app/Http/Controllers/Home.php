@@ -14,6 +14,11 @@ class Home extends Controller
         return view('home');
     }
 
+
+    public function embaixador(){
+        return view('emabaixador');
+    }
+
     public function emailMensagem(Request $request){
             
         Mail::send('emails.mensagem', [    

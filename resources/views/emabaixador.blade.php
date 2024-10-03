@@ -1,5 +1,6 @@
 @include('layouts.header')
 
+
   <main class="main">
 
     <!-- Hero Section -->
@@ -10,52 +11,13 @@
         <!-- Slide 1 -->
         <div class="carousel-item active">
           <div class="carousel-container">
-            <h2 class="animate__animated animate__fadeInDown">Bem Vindo a <span>UnyGov</span></h2>
-            <p class="animate__animated animate__fadeInUp">Inovação e Qualidade em Treinamentos Públicos</p>
-            <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Saiba Mais</a>
+            <h2 class="animate__animated animate__fadeInDown">Embaixador <span>UnyGov</span></h2>
+            <p class="animate__animated animate__fadeInUp">Seja um parceiro nosso e aumente seus resultados.</p>
+            <a href="https://api.whatsapp.com/send/?phone=5541997587226&text&type=phone_number&app_absent=0" class="btn-get-started animate__animated animate__fadeInUp scrollto">Saiba Mais</a>
           </div>
         </div>
 
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-          <div class="carousel-container">
-            <h2 class="animate__animated animate__fadeInDown">Encerramento e Transição de Mandato</h2>
-            <p class="animate__animated animate__fadeInUp">Seminário Exclusivo sobre Transição de Mandato, com os Professores mais capacitados para te proporcinar uma experiência unica e dar um salto em sua carreira!</p>
-            <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Saiba Mais</a>
-          </div>
-        </div>
-
-      <div class="carousel-item">
-        <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Finanças Municipais - Em início de mandato</h2>
-          <p class="animate__animated animate__fadeInUp">Seminário Exclusivo sobre Finanças Municipais, com foco no início de mandato. Aprenda com especialistas e dê o primeiro passo para uma gestão financeira eficiente!</p>
-          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Saiba Mais</a>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-  <div class="carousel-container">
-    <h2 class="animate__animated animate__fadeInDown">3ª edição LicitaExpo</h2>
-    <p class="animate__animated animate__fadeInUp">Participe do maior evento de licitações do país! A 3ª edição da LicitaExpo traz as melhores oportunidades e tendências do setor. Não perca essa chance de alavancar seus negócios!</p>
-    <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Saiba Mais</a>
-  </div>
-</div>
-
-<div class="carousel-item">
-  <div class="carousel-container">
-    <h2 class="animate__animated animate__fadeInDown">Reforma Tributária - Principais mudanças e suas implicações</h2>
-    <p class="animate__animated animate__fadeInUp">Descubra tudo sobre a Reforma Tributária e como as mudanças vão impactar sua gestão. Seminário exclusivo com os maiores especialistas da área!</p>
-    <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Saiba Mais</a>
-  </div>
-</div>
-
-<div class="carousel-item">
-  <div class="carousel-container">
-    <h2 class="animate__animated animate__fadeInDown">Comunicação Mídias e Transparência - Portal LGPD e Ouvidoria</h2>
-    <p class="animate__animated animate__fadeInUp">Explore as melhores práticas de comunicação e transparência no setor público, com foco na LGPD e Ouvidoria. Capacite-se para atender às novas exigências de transparência!</p>
-    <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Saiba Mais</a>
-  </div>
-</div>
+       
 
 
         <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
@@ -319,7 +281,7 @@
             <p>Fale com um de nossos consultores e saiba qual evento se encaixa melhor para você e sua equipe.</p>
           </div>
           <div class="col-xl-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="https://api.whatsapp.com/send/?phone=5541997587226&text&type=phone_number&app_absent=0">Fale com um consultor</a>
+            <a class="cta-btn align-middle" href="#">Fale com um consultor</a>
           </div>
         </div>
 

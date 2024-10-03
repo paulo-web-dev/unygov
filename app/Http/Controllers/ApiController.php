@@ -63,15 +63,15 @@ class ApiController extends Controller
 
     public function CadastroMaterial (Request $request){
       
-        if ($request->hasFile('file')) {  
-        
-            foreach ($request->file('file') as $file) {
+      
+         
+      
                 
-                
-
+                // dd($request->file('file'));
+                $file = $request->file('file');
                 $material = new Material(); 
                 $originalName = $file->getClientOriginalName(); 
-                $extensao = $file->extension();          
+                        
                 $novonome = $originalName; // Use o nome original do arquivo
     
                 $confere = Material::where('file_name', $novonome)->first();
@@ -103,24 +103,8 @@ class ApiController extends Controller
                     $destinationPath = public_path('/storage/materials');
                     $file->move($destinationPath, $novonome);
            
-            } 
+       
             return redirect()->to('https://unyflex.com.br/painel/materiais');
-        } else {
-            $novonome = $request->link;
-            $material->name = $request->nome;
-            $material->file_name = $novonome;
-            $material->type = $request->tipo;
-            $material->status = $request->status;
-            
-            if ($material->save()) {
-                $materialPanel = new MaterialPanels();
-                $materialPanel->material_id = $material->id;
-                $materialPanel->course_id = $request->id_presencial;
-                $materialPanel->save();
-                return redirect()->to('https://unyflex.com.br/painel/materiais');
-            } else {
-              
-            }
-        }
+     
     }
 }
