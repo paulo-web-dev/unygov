@@ -22,3 +22,4 @@ Route::post('/email/mensagem', [Home::class, 'emailMensagem'])->name('emailMensa
 //Apis
 Route::post('/api/cadastro/galeria', [ApiController::class, 'CadastroGaleria'])->name('cadastro-galeria');
 Route::post('/api/cadastro/material', [ApiController::class, 'CadastroMaterial'])->name('cadastro-material');
+Route::post('/api/upd/material', [ApiController::class, 'UpdMaterial'])->name('upd-material');

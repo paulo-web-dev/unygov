@@ -107,4 +107,54 @@ class ApiController extends Controller
             return redirect()->to('https://unyflex.com.br/painel/materiais');
      
     }
+
+
+    public function UpdMaterial (Material $material, Request $request){
+      
+      dd("API");
+         
+        $validator = Validator::make($request->all(), [
+            'nome' => 'required|max:255',
+            'tipo' => 'required',
+            'status' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->to('https://unyflex.com.br/painel/materiais');
+
+        }
+
+        if ($request->arquivo == null){
+            $material->name = $request->nome;
+            $material->type = $request->tipo;
+            if(isset($request->link)){
+                $material->file_name = $request->link;
+            }
+            $material->status = $request->status;
+            if ($material->save()) {
+                return redirect()->to('https://unyflex.com.br/painel/materiais');
+
+            } else {
+                return redirect()->to('https://unyflex.com.br/painel/materiais');
+
+            }
+
+        }
+
+        $material->name = $request->nome;
+        $name=$request->arquivo->getClientOriginalName();
+        $material->file_name = $request->arquivo->getClientOriginalName();
+        $material->type = $request->tipo;
+        $material->status = $request->status;
+        if ($material->save()) {           
+            $image = $request->file('arquivo');
+            $destinationPath = public_path('/storage/materials');
+            $image->move($destinationPath, $name);
+            return redirect()->to('https://unyflex.com.br/painel/materiais');
+
+        } else {
+            return redirect()->to('https://unyflex.com.br/painel/materiais');
+        }  
+   
+}
 }
