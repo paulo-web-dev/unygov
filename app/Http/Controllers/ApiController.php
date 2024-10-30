@@ -112,17 +112,6 @@ class ApiController extends Controller
     public function UpdMaterial (Material $material, Request $request){
       
 
-         
-        $validator = Validator::make($request->all(), [
-            'nome' => 'required|max:255',
-            'tipo' => 'required',
-            'status' => 'required'
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()->to('https://unyflex.com.br/painel/materiais');
-
-        }
 
         if ($request->arquivo == null){
             $material->name = $request->nome;
