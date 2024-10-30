@@ -14,5 +14,6 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
     '/api/cadastro/galeria',
     '/api/cadastro/material',
+    '/upd/cadastro/material',
     ];
 }
