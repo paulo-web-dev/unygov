@@ -111,7 +111,7 @@ class ApiController extends Controller
 
     public function UpdMaterial (Material $material, Request $request){
       
-      dd("API");
+
          
         $validator = Validator::make($request->all(), [
             'nome' => 'required|max:255',
