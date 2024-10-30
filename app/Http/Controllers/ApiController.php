@@ -134,6 +134,7 @@ class ApiController extends Controller
         $name=$request->arquivo->getClientOriginalName();
         $material->file_name = $request->arquivo->getClientOriginalName();
         $material->type = $request->tipo;
+        $material->id_antiga = 9417;
         $material->status = $request->status;
         if ($material->save()) {           
             $image = $request->file('arquivo');
