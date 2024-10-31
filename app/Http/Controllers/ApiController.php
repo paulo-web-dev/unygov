@@ -61,6 +61,36 @@ class ApiController extends Controller
         return redirect()->to('https://unyflex.com.br/painel/galerias');
     }
 
+    public function AddFotos(Request $request){
+    
+    
+        if ($request->hasFile('file')) {
+            $files = $request->file('file');
+            $i = 0;
+            foreach ($files as $file) {
+                $photos = new Photo();
+    
+                if (isset($request->link)) {        
+                    $name = $request->link; 
+                    $photos->Tipo = 'Link';
+                } else {
+                    $name = $file->getClientOriginalName();
+                }
+    
+                $photos->id_galeria = $request->galeria;
+                $photos->foto = $name;
+                
+                $destinationPath = public_path('/storage/galeria/fotos'); 
+                $file->move($destinationPath, $name);
+    
+                $photos->save();
+                $i++;
+            }
+        }
+       
+        return redirect()->to('https://unyflex.com.br/painel/galerias');
+    }
+
     public function CadastroMaterial (Request $request){
       
       
