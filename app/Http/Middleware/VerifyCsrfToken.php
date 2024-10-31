@@ -15,5 +15,6 @@ class VerifyCsrfToken extends Middleware
     '/api/cadastro/galeria',
     '/api/cadastro/material',
     '/api/upd/material',
+    '/api/add/fotos',
     ];
 }
