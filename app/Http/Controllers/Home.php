@@ -11,6 +11,8 @@ class Home extends Controller
     }
 
     public function home(){
+
+         return redirect('unyflex.com.br');
         return view('home');
     }
 
