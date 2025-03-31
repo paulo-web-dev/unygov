@@ -12,7 +12,10 @@ class Home extends Controller
 
     public function home(){
 
-         return redirect('unyflex.com.br');
+        
+        return redirect('https://unyflex.com.br/', 301);
+
+
         return view('home');
     }
 
